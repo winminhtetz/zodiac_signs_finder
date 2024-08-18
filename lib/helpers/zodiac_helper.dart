@@ -21,7 +21,7 @@ class ZodiacHelper {
 
   List<Tropical> _getTropicalData({required Element table}) {
     List<Tropical> tropicalList = [];
-    //get all table row from table
+
     for (final rows in table.querySelectorAll('tr')) {
       final tableData = rows.querySelectorAll('td');
 
