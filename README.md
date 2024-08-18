@@ -1,46 +1,30 @@
+# **Find My Zodiac Signs**
 
-
-# Running the sample
-
-## Running with the Dart SDK
-
-You can run the example with the [Dart SDK](https://dart.dev/get-dart)
-like this:
+Base URL
 
 ```
-$ dart run bin/server.dart
-Server listening on port 8080
+https://zodiac-signs-finder-8801.globeapp.dev/
 ```
 
-And then from a second terminal:
-```
-$ curl http://0.0.0.0:8080
-Hello, World!
-$ curl http://0.0.0.0:8080/echo/I_love_Dart
-I_love_Dart
-```
-
-## Running with Docker
-
-If you have [Docker Desktop](https://www.docker.com/get-started) installed, you
-can build and run with the `docker` command:
+Firstly, find the city where you born
 
 ```
-$ docker build . -t myserver
-$ docker run -it -p 8080:8080 myserver
-Server listening on port 8080
+[GET]:base_url/find_city?city=yangon
 ```
 
-And then from a second terminal:
-```
-$ curl http://0.0.0.0:8080
-Hello, World!
-$ curl http://0.0.0.0:8080/echo/I_love_Dart
-I_love_Dart
-```
+And then find your zodiac sings: 
 
-You should see the logging printed in the first terminal:
 ```
-2021-05-06T15:47:04.620417  0:00:00.000158 GET     [200] /
-2021-05-06T15:47:08.392928  0:00:00.001216 GET     [200] /echo/I_love_Dart
+[POST]:base_url/get_my_zodiac
+
+request: {
+    "name": "",
+    "sex": 1,
+    "d1month": 9,
+    "d1day": 1,
+    "d1year": 2003,
+    "d1hour": 2,
+    "d1min": 20,
+    "cityList": "Yangon,0,95,16.83,96.00"
+}
 ```
